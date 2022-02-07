@@ -15,8 +15,12 @@ function capitalA(s){
 which end with io (example@example.io) */
 
 function ioEmail(email){
-    // Add your logic.
-    return;
+   let emailCheck=email.match(/^[\w]+@([\w-])+[\w-].io$/g)
+   if(emailCheck!==null){
+       return true
+   }else{
+    return false;
+   }
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
@@ -28,7 +32,12 @@ required extention are jpg, jpeg and png.
 
 function imagesSearcher(text){
     let arr = [];
-    // Add your logic.
+  let array=text.split(' ');
+  array.forEach(element => {
+      if(element.match(/([a-zA-Z0-9\s_\\.\-\(\):])+(.jpeg|.jpg|.png)$/g) !=null){
+        array.push(element)
+      }
+  })
     return arr
 }
 
