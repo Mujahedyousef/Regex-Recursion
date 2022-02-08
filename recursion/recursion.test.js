@@ -1,16 +1,21 @@
 /* Write a function to do the division operation without using the built-in division*/
 
 function division(number, dividedBy){
-    
-    if (dividedBy==0){
-        return 0;
-    }else if( number==0) {
-        return 0;
-    }else if (dividedBy===number){
-        return 1;
-    }else {
-        return number/dividedBy
-    }}
+    let num=0;
+   function divisionSequence(number, dividedBy){
+if (dividedBy==0){
+    return 0;
+}
+if(number-dividedBy>=dividedBy ||number-dividedBy==0){
+    num=num+1
+return divisionSequence(number-dividedBy,dividedBy);
+   }else{
+       return ;
+   }
+}
+divisionSequence(number, dividedBy);
+   return num;
+}
 
 /* Write a function that implement Math.pow(x,n) but using recursion
 Example:
